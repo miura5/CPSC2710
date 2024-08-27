@@ -9,7 +9,11 @@ public class SeatReservation {
     }
 
     public void setFlightDesignator(String fd) {
-        this.flightDesignator = fd;
+        if (fd.length() < 4 || fd.length() > 6) {
+            throw new IllegalArgumentException("Flight designator length must be between 4 and 6 characters");
+        } else {
+            this.flightDesignator = fd;
+        }
     }
 
     public java.time.LocalDateTime getFlightTime() {
