@@ -1,6 +1,6 @@
 public class SeatReservation {
     private String flightDesignator;
-    private java.time.LocalDateTime flightTime;
+    private java.time.LocalDate flightTime;
     private String firstName;
     private String lastName;
 
@@ -9,26 +9,23 @@ public class SeatReservation {
     }
 
     public void setFlightDesignator(String fd) {
-<<<<<<< HEAD
         // this.flightDesignator = fd;
         if (fd == null){
             throw new IllegalArgumentException("flight designator cannot be null");
          }
          this.flightDesignator = fd;
-=======
         if (fd.length() < 4 || fd.length() > 6) {
             throw new IllegalArgumentException("Flight designator length must be between 4 and 6 characters");
         } else {
             this.flightDesignator = fd;
         }
->>>>>>> origin/branch1-fix1
     }
 
-    public java.time.LocalDateTime getFlightTime() {
+    public java.time.LocalDate getFlightDate() {
         return flightTime;
     }
 
-    public void setFlightTime(java.time.LocalDateTime date) {
+    public void setFlightDate(java.time.LocalDate date) {
         this.flightTime = date;
     }
 
@@ -50,7 +47,7 @@ public class SeatReservation {
 
     @Override
     public String toString() {
-        return String.format("SeatReservation{flightDesignator=%s,flightDate=%s, firstName=%s, lastName=%s}",
+        return String.format("SeatReservation{flightDesignator=%s,flightDate=%s,firstName=%s,lastName=%s}",
                 flightDesignator,
                 flightTime,
                 firstName,
